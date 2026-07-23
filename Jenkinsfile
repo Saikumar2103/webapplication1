@@ -125,14 +125,14 @@ pipeline {
                                 sudo docker stop snapchat-container || true
                                 sudo docker rm snapchat-container || true
                                 echo "🚀 Starting new container..."
-                                sudo docker run -d -p 8084:8080 --name snapchat-container sakit333/snapchat-sak-cicd-docker:latest
+                                sudo docker run -d -p 8084:8080 --name snapchat-container saikumar004/snapchat-sak-cicd-docker:latest
                             '''
                         } else {
                             echo "⏩ Skipping container restart as per user choice."
                         }
                     } else {
                         echo "🚀 No existing container found — starting new one..."
-                        sh 'sudo docker run -d -p 8084:8080 --name snapchat-container sakit333/snapchat-sak-cicd-docker:latest'
+                        sh 'sudo docker run -d -p 8084:8080 --name snapchat-container saikumar004/snapchat-sak-cicd-docker:latest'
                     }
                 }
             }
